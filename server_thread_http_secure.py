@@ -58,6 +58,7 @@ class Server(threading.Thread):
 		self.hostname = hostname
 		cert_location = os.getcwd() + '/certs/'
 		self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+		# self.context.set_ciphers('HIGH:!aNULL:!MD5') # baru
 		self.context.load_cert_chain(certfile=cert_location + 'domain.crt',
 									 keyfile=cert_location + 'domain.key')
 #---------------------------------
